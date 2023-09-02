@@ -1,6 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\NewUserController;
+use App\Http\Controllers\Api\TransferController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\UserWalletController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/login',           [AuthController::class, 'store'])->name('login');
+Route::delete('/logout',        [AuthController::class, 'destroy'])->name('logout');
+Route::post('/register',        [NewUserController::class, 'store'])->name('register');
+
+Route::middleware('auth')->group(function () {
+    Route::apiResource('users',             UserController::class)->only('store', 'update', 'destroy');
+    Route::apiResource('users.wallets',     UserWalletController::class)->only('store');
+    Route::apiResource('wallets.transfers', TransferController::class)->only('store');
 });
