@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <button type="submit" class="btn btn-primary">Transfer Funds</button>
+                        <button type="submit" class="btn btn-primary">Fund Wallet</button>
                     </div>
                 </form>
             </div>

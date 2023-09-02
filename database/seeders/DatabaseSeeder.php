@@ -16,16 +16,16 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()->create([
             'id'         => 1,
-            'email'      => 'ask4rapzo@gmail.com',
+            'email'      => 'ogarjobbassey@gmail.com',
             'first_name' => 'Ogar',
-            'last_name'  => 'Job',
+            'last_name'  => 'Bassey',
         ])->update(['created_by' => 1]);
 
         User::factory()->create([
             'id'         => 2,
             'first_name' => 'Joseph',
-            'last_name'  => 'Bassey',
-            'email'      => 'ogarjobbassey@gmail.com',
+            'last_name'  => 'Asu',
+            'email'      => 'ask4rapzo@gmail.com',
             'phone'      => '08126012460',
         ])->update(['created_by' => 1]);
 

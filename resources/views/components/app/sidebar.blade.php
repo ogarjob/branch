@@ -69,7 +69,7 @@
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">Customers</span>
+                                        <span class="menu-title">Other Users</span>
                                     </a>
                                 </div>
                             </div>

@@ -6,6 +6,7 @@ use App\Models\Concerns\ChecksUserState;
 use App\Models\Concerns\ObservesWrites;
 use App\Models\Enums\Gender;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -50,5 +51,21 @@ class User extends Authenticatable implements MustVerifyEmail
     public function wallets(): HasMany
     {
         return $this->HasMany(Wallet::class);
+    }
+
+    /**
+     * Scope a query to only include admin users.
+     */
+    public function scopeAdmin(Builder $builder): void
+    {
+        $builder->whereType('admin');
+    }
+
+    /**
+     * Scope a query to only include users that are customers.
+     */
+    public function scopeCustomer(Builder $builder): void
+    {
+        $builder->whereType('customer');
     }
 }
