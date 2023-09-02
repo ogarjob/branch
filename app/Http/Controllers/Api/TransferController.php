@@ -20,7 +20,6 @@ class TransferController extends Controller
         Transfer::create($request->validate([
             'from_wallet_id' => 'required',
             'to_wallet_id' => 'required',
-//            'product_id'   => 'required',
             'amount'       => ['required', 'numeric', 'max:'.$wallet->balance],
         ]));
 
