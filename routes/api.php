@@ -18,12 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/login',           [AuthController::class, 'store'])->name('login');
-Route::delete('/logout',        [AuthController::class, 'destroy'])->name('logout');
-Route::post('/register',        [NewUserController::class, 'store'])->name('register');
+Route::post('/login',    [AuthController::class, 'store'])->name('login');
+Route::delete('/logout', [AuthController::class, 'destroy'])->name('logout');
+Route::post('/register', [NewUserController::class, 'store'])->name('register');
 
 Route::middleware('auth')->group(function () {
     Route::apiResource('users',             UserController::class)->only('store', 'update', 'destroy');
     Route::apiResource('users.wallets',     UserWalletController::class)->only('store');
     Route::apiResource('wallets.transfers', TransferController::class)->only('store');
+
+    Route::post('wallets/{wallet}/fund', [UserWalletController::class, 'fund'])->name('wallets.fund');
 });
