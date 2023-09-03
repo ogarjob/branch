@@ -20,17 +20,17 @@
                 <input id="email" name="email" type="email" placeholder="Email" class="form-control form-control-solid" required>
             </div>
             <div class="fv-row mb-6">
-                <input id="phone" name="phone" type="tel" placeholder="Phone Number" class="form-control form-control-solid" required>
+                <input id="phone" name="phone" type="number" placeholder="Phone Number" class="form-control form-control-solid" required>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-6">
-                    <select name="gender" class="form-select form-select-solid" data-control="select2" required>
+                    <select name="gender" class="form-select form-select-solid" required>
                         <option value="M">male</option>
                         <option value="F">female</option>
                     </select>
                 </div>
                 <div class="col-md-6 mb-6">
-                    <select name="type" class="form-select form-select-solid" data-control="select2">
+                    <select name="type" class="form-select form-select-solid">
                         <option value="admin">Admin</option>
                         <option value="customer">User</option>
                     </select>

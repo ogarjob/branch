@@ -81,8 +81,6 @@
 <!--end::Root-->
 
 <!--begin::Javascript-->
-<script>
-<script src="{{ asset('plugins/global/plugins.bundle.js') }}"></script>
 <script src="{{ asset('js/scripts.bundle.js') }}"></script>
 <script src="{{ asset("js/request.js") }}"></script>
 
